@@ -1,55 +1,90 @@
-# Real Time Output of commnads
+# Real Time Output of Commands
 
-### Process Commands
-- `ps -aux | tail -20` 
-List running processes (last 20 lines)
-![alt text](<Screenshot from 2026-02-21 15-39-49.png>)
+---
 
-- `pgrep -l brave`
-![alt text](image.png)
+## Process Commands
 
-### Service Commands
+- `ps aux | tail -20`  
+  List running processes (last 20 lines)
 
-- `systemctl status | head -20` 
-display status of system services
-![alt text](image-1.png)
+![ps aux output](screenshots/Screenshot%20from%202026-02-21%2015-39-49.png)
 
--`systemctl list-units --type=serivce --state=running`
-display system services which are in running state
- ![alt text](image-2.png)
+---
 
+- `pgrep -l brave`  
+  Display PID and name of the Brave browser process
 
-### Logs Commands
-- `journalctl -u nginx` 
-Display logs of nginx(respective service)
-![alt text](image-3.png)
+![pgrep brave](screenshots/image.png)
 
-- `journalctl -u docker | tail -15` 
-Display last 15 lines of docker log
-![alt text](image-4.png)
+---
 
-- `sudo cat kern.log | head -10` 
-- `journalctl -k | head -10` 
-Display kernal logs 
-![alt text](image-5.png)
+## Service Commands
 
-### Inspecting an service (docker)
+- `systemctl status | head -20`  
+  Display status of system services
 
-- `systemctl status docker `
-get status of service
-![alt text](image-9.png)
+![systemctl status](screenshots/image-1.png)
 
-- `journalctl -u docker | tail -10` 
-get logs of docker service
-![alt text](image-10.png)
+---
 
-- `systemctl stop docker` 
-lets stop the serice
-![alt text](image-11.png)
+- `systemctl list-units --type=service --state=running`  
+  Display system services which are in running state
 
-- `journalctl -u docker | tail -15` 
-now let's again get logs
-![alt text](image-12.png)
+![running services](screenshots/image-2.png)
+
+---
+
+## Logs Commands
+
+- `journalctl -u nginx`  
+  Display logs of nginx (respective service)
+
+![nginx logs](screenshots/image-3.png)
+
+---
+
+- `journalctl -u docker | tail -15`  
+  Display last 15 lines of Docker logs
+
+![docker logs](screenshots/image-4.png)
+
+---
+
+- `journalctl -k | head -10`  
+  Display kernel logs
+
+![kernel logs](screenshots/image-5.png)
+
+---
+
+## Inspecting a Service (Docker)
+
+- `systemctl status docker`  
+  Get status of Docker service
+
+![docker status](screenshots/image-9.png)
+
+---
+
+- `journalctl -u docker | tail -10`  
+  Get logs of Docker service
+
+![docker log tail](screenshots/image-10.png)
+
+---
+
+- `systemctl stop docker`  
+  Stop Docker service
+
+![docker stop](screenshots/image-11.png)
+
+---
+
+- `journalctl -u docker | tail -15`  
+  Verify logs after stopping Docker
+
+![docker logs after stop](screenshots/image-12.png)
+
 ---
 
 ## Notes
