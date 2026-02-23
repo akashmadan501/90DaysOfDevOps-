@@ -1,25 +1,25 @@
-Task 2: Create Groups (10 minutes)
-Create two groups:
 
-developers
-admins
-Verify: Check /etc/group
 
 ## Linux User & Group Management Challenge
 
 ## User created with home dir and shell
 
 `useradd -m -s /bin/bash username`
+
+
 ![snap](images/users-created.png)
 
 ## Groups created
 `groupadd groupname`
-![snap](groups-created.png)
+
+![snap](images/groups-created.png)
 
 
 ## Assign Users to Groups 
 
 `usermod -aG <groupname> <username>`
+
+
 ![snap](images/user-added-to-group.png)
 
 
@@ -30,6 +30,7 @@ Verify: Check /etc/group
 - Set group owner to developers     -  `chgrp developers dev-project`
 - Set permissions to 775 (rwxrwxr-x)        -       `sudo chmod 775 dev-project`
 - Test by creating files as tokyo and berlin  
+
 
 ![snap](images/shared-dir.png)
 
@@ -42,6 +43,8 @@ Verify: Check /etc/group
 - Create /opt/team-workspace directory  -      `mkdir /opt/team-workspace`
 - Set group to project-team, permissions to 775  -   `chmod 775 /opt/team-workspace`
 - Test by creating file as nairobi    -     
+
+
 
 ![snap](images/Team-workspace1.png)
 
